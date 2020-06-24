@@ -26,6 +26,10 @@ def test_create_summaries_invalid_json(test_app):
         ]
     }
 
+    response = test_app.post("/summaries/", data=json.dumps({"url": "invalid://url"}))
+    assert response.status_code == 422
+    assert response.json()["detail"][0]["msg"] == "URL scheme not permitted"
+
 
 def test_read_summary(test_app_with_db):
     response = test_app_with_db.post(
@@ -47,6 +51,19 @@ def test_read_summary_incorrect_id(test_app_with_db):
     response = test_app_with_db.get("/summaries/999/")
     assert response.status_code == 404
     assert response.json()["detail"] == "Summary not found"
+
+    response = test_app_with_db.get("/summaries/0/")
+    assert response.status_code == 422
+    assert response.json() == {
+        "detail": [
+            {
+                "loc": ["path", "id"],
+                "msg": "ensure this value is greater than 0",
+                "type": "value_error.number.not_gt",
+                "ctx": {"limit_value": 0},
+            }
+        ]
+    }
 
 
 def test_read_all_summaries(test_app_with_db):
