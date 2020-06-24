@@ -8,7 +8,6 @@ from fastapi import FastAPI
 from tortoise import Tortoise, run_async
 from tortoise.contrib.fastapi import register_tortoise
 
-
 log = logging.getLogger(__name__)
 
 
