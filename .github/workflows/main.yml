@@ -93,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, test]
     env:
-      HEROKU_APP_NAME: <APP_NAME>
+      HEROKU_APP_NAME: immense-island-91665
       HEROKU_REGISTRY_IMAGE: registry.heroku.com/${HEROKU_APP_NAME}/web
     steps:
       - name: Checkout master
