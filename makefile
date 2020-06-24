@@ -14,4 +14,4 @@ rebuild:  ## Rebuild docker images
 	@docker-compose up -d --build
 
 test: ## Run the current test suite
-	@docker-compose exec web python -m pytest
+	@docker-compose exec web python -m pytest --cov="."
