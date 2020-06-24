@@ -37,6 +37,9 @@ postgres:  ## Access db via psql
 rebuild:  ## Rebuild docker images
 	@docker-compose up -d --build
 
+rebuild-db:  ## Rebuild db in docker image
+	@docker-compose exec web python app/db.py
+
 test: ## Run the current test suite
 	@docker-compose exec web python -m pytest --cov="."
 
