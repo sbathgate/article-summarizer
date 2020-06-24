@@ -1,6 +1,6 @@
 # Test-Driven Development with FastAPI and Docker
 
-![Continuous Integration and Delivery](https://github.com/sbathgate/fastapi-tdd-docker/workflows/Continuous%20Integration%20and%20Delivery/badge.svg?branch=master)
+![CI/CD](https://github.com/sbathgate/fastapi-tdd-docker/workflows/Continuous%20Integration%20and%20Delivery/badge.svg?branch=master)
 
 ## Quick start
 * Clone GitLab Repo: `$ git clone https://github.com/sbathgate/fastapi-tdd-docker.git`
