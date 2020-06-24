@@ -1,7 +1,7 @@
 # Article Summarizer
 > Article Summarizer is an asynchronous RESTful API built with Python and FastAPI. It utilizes Newspaper3k to provide real-time text summarization from a given URL. 
 
-![CI/CD]([gh-actions-image])
+![CI/CD](https://github.com/sbathgate/fastapi-tdd-docker/workflows/CI/badge.svg?branch=master)
 
 ## Development setup
 
@@ -99,5 +99,3 @@ This project wouldn't have been possible without the excellent [Test-Driven Deve
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
-<!-- Markdown link & img dfn's -->
-[gh-actions-image]: https://github.com/sbathgate/fastapi-tdd-docker/workflows/CI/badge.svg?branch=master
