@@ -5,6 +5,30 @@ help:  ## Output available commands
 	@echo
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
+lint-check:
+	@docker-compose exec web flake8 .
+	@echo "flake8 complete!"
+	@docker-compose exec web black . --check
+	@echo "black complete!"
+	@docker-compose exec web /bin/sh -c "isort ./**/*.py --check-only"
+	@echo "isort complete!"
+
+lint-correct:
+	@docker-compose exec web flake8 .
+	@echo "flake8 complete!"
+	@docker-compose exec web black .
+	@echo "black complete!"
+	@docker-compose exec web /bin/sh -c "isort ./**/*.py"
+	@echo "isort complete!"
+
+lint-diff:
+	@docker-compose exec web flake8 .
+	@echo "flake8 complete!"
+	@docker-compose exec web black . --diff
+	@echo "black complete!"
+	@docker-compose exec web /bin/sh -c "isort ./**/*.py --diff"
+	@echo "isort complete!"
+
 postgres:  ## Access db via psql
 	@echo "# \c web_dev"
 	@echo "# \dt"
