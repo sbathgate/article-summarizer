@@ -1,7 +1,7 @@
 # Article Summarizer
 > Article Summarizer is an asynchronous RESTful API built with Python and FastAPI. It utilizes Newspaper3k to provide real-time text summarization from a given URL. 
 
-![CI/CD][gh-actions-image]
+![CI/CD]([gh-actions-image])
 
 ## Development setup
 
