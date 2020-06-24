@@ -39,3 +39,10 @@ rebuild:  ## Rebuild docker images
 
 test: ## Run the current test suite
 	@docker-compose exec web python -m pytest --cov="."
+
+test-routes:  ## Test routes using HTTPie 
+	@http GET https://immense-island-91665.herokuapp.com/summaries/
+	@http GET https://immense-island-91665.herokuapp.com/summaries/1/
+	@http --json POST https://immense-island-91665.herokuapp.com/summaries/ url=https://shaunb.ca
+	@http --json PUT https://immense-island-91665.herokuapp.com/summaries/3/ url=https://shaunb.ca summary=super
+	@http DELETE https://immense-island-91665.herokuapp.com/summaries/3/
